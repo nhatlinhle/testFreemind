@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Freemind</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+
+</head>
+
+<body>
+  <div class="content">
+    <div class="header">
+      <img src="./images/logo_transparent_background 1.png" alt="">
+      <p>Hãy gửi CV của bạn cho chúng tôi</p>
+    </div>
+    <form action="#" method="POST" id="register" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-25">
+          <label for="name">Tên của bạn</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="name" name="name" placeholder="Ví dụ: Nguyễn Văn A">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="phone">Số điện thoại</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="phone" name="phone" placeholder="số điện thoại liên lạc">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="position">Vị trí</label>
+        </div>
+        <div class="col-75">
+          <select id="position" name="position">
+            <option value="junior">Junior Ecommerce Web Developer</option>
+            <option value="fresher">Fresher Ecommerce Web Developer</option>
+            <option value="senior">Senior Ecommerce Web Developer</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="exp">Kinh nghiệm làm việc
+          </label>
+        </div>
+        <div class="col-75">
+          <textarea id="exp" name="exp"></textarea>
+        </div>
+      </div>
+      <div class=row>
+        <div class="col-25">
+        </div>
+        <div class="col-75">
+          <label for="file-input">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.8413 5.82715C14.5802 5.56749 14.1581 5.56865 13.8984 5.82969L5.88428 13.8872C4.84454 14.9269 3.15585 14.9269 2.11417 13.8858C1.07327 12.8444 1.07327 11.1557 2.11429 10.1147L10.3657 1.81991C11.0148 1.17081 12.0702 1.17081 12.7212 1.82132C13.372 2.47215 13.372 3.52739 12.721 4.1784L5.88553 11.0139C5.88509 11.0143 5.88472 11.0148 5.88428 11.0152C5.62387 11.2742 5.20302 11.2739 4.94313 11.014C4.68282 10.7537 4.68282 10.3317 4.94313 10.0714L8.24258 6.7713C8.5029 6.51092 8.50287 6.08878 8.24249 5.82847C7.9821 5.56815 7.55997 5.56818 7.29965 5.82856L4.00024 9.12863C3.21926 9.90961 3.21926 11.1758 4.0003 11.9568C4.78132 12.7378 6.04747 12.7378 6.82852 11.9568C6.82942 11.9559 6.83014 11.9549 6.83102 11.954L13.6638 5.12117C14.8356 3.94946 14.8356 2.04998 13.6638 0.878268C12.492 -0.292756 10.5926 -0.292756 9.4216 0.878268L1.17021 9.17307C-0.390258 10.7335 -0.390258 13.2662 1.17134 14.8286C2.73396 16.3904 5.2667 16.3904 6.82839 14.8287L14.8438 6.76999C15.1035 6.50892 15.1023 6.08681 14.8413 5.82715Z" fill="black"/>
+            </svg>
+          </label>
+          <input id="file-input" name="picture" type="file" />
+            <span id="file-name">Đính kèm hình ảnh</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="email">Email</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="email" name="email" value="Ex: contact@freemind.vn">
+        </div>
+      </div>
+      <div class="row submit">
+        <input type="submit" value="GỬI CV cho Freemind">
+      </div>
+    </form>
+  </div>
+</body>
+<script src="./js.js"></script>
+</html>
