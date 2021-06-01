@@ -69,7 +69,7 @@ $("#register").submit(function (e) {
   $.ajax({
     type: 'POST',
     url: url,
-    data: newData,
+    data: dataSend,
     dataType: "json",
     success: function () {
       alert("success");
