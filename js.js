@@ -40,6 +40,39 @@ $("#register").validate({
   },
   unhighlight: function (element, errorClass, validClass) {
     $(element).removeClass('is-invalid');
+  },
+  submitHandler: function (e) {
+    const name = $("#name").val()
+    const phone = $("#phone").val()
+    const position = $("#position").val()
+    const exp = $("#exp").val()
+    const fileInput = $("#file-input").val()
+    const email = $("#email").val()
+    let data = {
+      name: name,
+      phone: phone,
+      position: position,
+      exp: exp,
+      picture: fileInput,
+      email: email
+    }
+    let dataSend = JSON.stringify(data)
+    const url = "https://freemind-test.netlify.app/.netlify/functions/test";
+    $.ajax({
+      type: 'POST',
+      url: url,
+      data: dataSend,
+      dataType: "json",
+      success: function () {
+        let r = confirm("Successful!");
+        if (r == true) {
+          window.location.reload();
+        }
+      },
+      error: function (xhr, status, error) {
+        alert(error);
+      }
+    });
   }
 });
 // Get name picture
@@ -47,35 +80,4 @@ $('#file-input').change(function () {
   let file = $('#file-input')[0].files[0].name
   $('#file-name').text(file)
 });
-// Send API
-$("#register").submit(function (e) {
-  e.preventDefault();
-  const name = $("#name").val()
-  const phone = $("#phone").val()
-  const position = $("#position").val()
-  const exp = $("#exp").val()
-  const fileInput = $("#file-input").val()
-  const email = $("#email").val()
-  let data = {
-    name: name,
-    phone: phone,
-    position: position,
-    exp: exp,
-    picture: fileInput,
-    email: email
-  }
-  let dataSend = JSON.stringify(data)
-  const url = "https://freemind-test.netlify.app/.netlify/functions/test";
-  $.ajax({
-    type: 'POST',
-    url: url,
-    data: newData,
-    dataType: "json",
-    success: function () {
-      alert("success");
-    },
-    error: function (xhr, status, error) {
-      alert(error);
-    }
-  });
-});
+
